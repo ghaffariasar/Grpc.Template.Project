@@ -155,7 +155,7 @@ dotnet run
 - قراردادها و پیام‌ها در پوشه `Protos/v1` نسخه‌گذاری شده‌اند.  
 - برای افزودن RPC جدید: پیام‌ها را در proto اضافه کرده، کدهای تولیدی را به‌روزرسانی کنید و سپس در سرویس‌ها پیاده‌سازی نمایید.
 
-### مسیرهای مفید
+### مسیرها
 - سرور: `Server/GrpcServerProject.GrpcService`  
 - کلاینت: `Client/GrpcClientProject.WebApp`  
 - فایل پروتو: `Server/GrpcServerProject.GrpcService/Protos/v1/student.proto` و نسخه‌ی مشابه در کلاینت  
