@@ -1,4 +1,4 @@
-# GrpcServerProject.GrpcService
+# gRPC Server Project
 
 ## English
 .NET 9 gRPC host with Reflection and an error-handling interceptor. Uses an InMemory database for a simple sample.
