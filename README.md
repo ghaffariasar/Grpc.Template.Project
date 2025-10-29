@@ -1,4 +1,4 @@
-# gRpc Template Project
+# gRPC Template Project
 
 ## English
 A complete gRPC Server/Client template for .NET 9 featuring a gRPC server and a Razor Pages web client. It is designed for learning and quick starts with common patterns, best practices, and full documentation.
