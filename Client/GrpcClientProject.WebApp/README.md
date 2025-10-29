@@ -1,4 +1,4 @@
-# GrpcClientProject.WebApp
+# gRPC Client Project
 
 ## English
 Razor Pages web app that connects to the gRPC server to perform Student operations.
