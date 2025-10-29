@@ -1,0 +1,86 @@
+## Build results
+bin/
+obj/
+[Bb]uild/
+[Ll]og/
+[Tt]emp/
+
+## Visual Studio
+.vs/
+*.user
+*.suo
+*.sln.ide
+*.vcxproj.user
+*.csproj.user
+
+## Rider
+.idea/
+*.ipr
+*.iws
+*.iml
+
+## VS Code
+.vscode/
+.history/
+
+## NuGet
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!.nuget/*
+project.lock.json
+
+## Cache/Artfacts
+*.cache
+*.pdb
+*.mdb
+*.svclog
+*.etl
+*.pidb
+*.ilk
+*.obj
+*.tmp
+*.log
+*.tlog
+*.lastcodeanalysissucceeded
+*.tlog
+*.ds_store
+.DS_Store
+Thumbs.db
+
+## Publish output
+[Pp]ublish*/
+**/wwwroot/lib/
+
+## ASP.NET scaffolding
+ScaffoldingReadMe.txt
+
+## Terraform/infra (if any)
+*.tfstate
+*.tfstate.backup
+.terraform/
+
+## Coverage/Testing
+coverage/
+TestResults/
+*.coverage
+*.coveragexml
+*.trx
+
+## Resharper/analysis
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+## Logs
+*.log
+logs/
+
+## Local tooling
+*.local
+.env
+.env.*
+
+## OS files
+*.swp
+*~

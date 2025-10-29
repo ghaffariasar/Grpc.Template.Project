@@ -1,0 +1,76 @@
+﻿@page
+@model GrpcClientProject.WebApp.Pages.Students.CreateModel
+@{
+}
+
+
+<div class="container py-3">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3 class="m-0 page-title">Add Students</h3>
+        <a class="btn btn-outline-secondary" asp-page="Index">Back to List</a>
+    </div>
+
+    <ul class="nav nav-tabs" id="createTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="manual-tab" data-bs-toggle="tab" data-bs-target="#manualPane" type="button" role="tab">Manual Entry</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="file-tab" data-bs-toggle="tab" data-bs-target="#filePane" type="button" role="tab">Upload JSON</button>
+        </li>
+    </ul>
+    <div class="tab-content border-start border-end border-bottom p-3">
+       
+        <div class="tab-pane fade show active" id="manualPane" role="tabpanel">
+            <form method="post" asp-page-handler="Manual">
+                @if (TempData["ErrorMessage"] != null)
+                {
+                    <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+                }
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-2"></div>
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label class="form-label" asp-for="Input.StudentNumber"></label>
+                        <input class="form-control" asp-for="Input.StudentNumber" />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label" asp-for="Input.FirstName"></label>
+                        <input class="form-control" asp-for="Input.FirstName" />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label" asp-for="Input.LastName"></label>
+                        <input class="form-control" asp-for="Input.LastName" />
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label" asp-for="Input.Description"></label>
+                        <textarea class="form-control" asp-for="Input.Description" rows="3"></textarea>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label" for="PhoneNumbers">Phone numbers (comma separated)</label>
+                        <input class="form-control" id="PhoneNumbers" name="PhoneNumbers" />
+                    </div>
+                </div>
+                <div class="mt-3 d-flex justify-content-end">
+                    <button class="btn btn-primary" type="submit">Create</button>
+                </div>
+            </form>
+        </div>
+        <div class="tab-pane fade" id="filePane" role="tabpanel">
+            <form enctype="multipart/form-data" method="post" asp-page-handler="File">
+                @if (TempData["ErrorMessage"] != null)
+                {
+                    <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+                }
+                <div class="mb-3">
+                    <label class="form-label" for="StudentFile">Select JSON file</label>
+                    <input class="form-control" type="file" asp-for="StudentFile" accept="application/json" />
+                </div>
+                <button class="btn btn-success" type="submit">Upload and Create</button>
+            </form>
+            <div class="form-text mt-2">Expected JSON: array of StudentCreateModel objects.</div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

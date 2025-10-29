@@ -1,0 +1,52 @@
+syntax = "proto3";
+option csharp_namespace = "GrpcClientProject.Infrastructure.Protos.v1";
+
+package GrpcService.StudentService.v1;
+import "google/protobuf/empty.proto";
+import "google/protobuf/wrappers.proto"; 
+
+
+
+service StudentService{
+
+	rpc GetAll(google.protobuf.Empty) returns (stream StudentResponse);
+	rpc GetById(StudentId) returns (StudentResponse);
+
+	rpc CreateStudent(stream CreateStudentRequest) returns (stream StudentId);
+	rpc UpdateStudent(UpdateStudentRequest) returns (google.protobuf.BoolValue);
+	rpc DeleteStudent(StudentId) returns (google.protobuf.BoolValue);
+
+}
+
+
+message StudentResponse{
+  int32  Id = 1; 
+  string StudentNumber = 2; 
+  string FirstName = 3;
+  string LastName = 4;
+  string Description = 5;
+  repeated string PhoneNumbers = 6;
+}
+
+
+message StudentId {
+  int32 Id = 1;
+}
+
+
+message CreateStudentRequest {
+  string StudentNumber = 1; 
+  string FirstName = 2;
+  string LastName = 3;
+  string Description = 4;
+  repeated string PhoneNumbers = 5;
+}
+
+message UpdateStudentRequest {
+  int32 Id = 1; 
+  string FirstName = 2;
+  string LastName = 3;
+  string Description = 4;
+}
+
+
